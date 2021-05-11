@@ -1,0 +1,48 @@
+﻿@page "/Operacion"
+
+<h2>Operación</h2>
+<h3>Suma, resta y multiplicación</h3>
+
+<div class="row">
+    <table>
+        <tbody>
+            <tr>
+                <td>Primer número:</td>
+                <td><input @bind="numero1" /></td>
+            </tr>
+            <tr>
+                <td>Segundo número:</td>
+                <td><input @bind="numero2" /></td>
+            </tr>
+            <tr>
+                <td>La multiplicación es:</td>
+                <td>@multiplicacion</td>
+            </tr>
+            <tr>
+                <td>La suma es:</td>
+                <td>@suma</td>
+            </tr>
+            <tr>
+                <td>La resta es:</td>
+                <td>@resta</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<button @onclick="Operar">Operar</button>
+
+@code {
+    private float numero1;
+    private float numero2;
+    private float multiplicacion;
+    private float suma;
+    private float resta;
+
+    private void Operar()
+    {
+        suma = numero1 + numero2;
+        multiplicacion = numero1 * numero2;
+        resta = numero1 - numero2;
+    }
+}
